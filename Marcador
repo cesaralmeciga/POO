@@ -1,0 +1,102 @@
+package Ex1;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Utiles {
+	
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	
+	static int incremento;
+	int peso; 
+	int tamaño;
+	static int contador;
+	static int Total;
+	static int precio;
+    String textura;
+    static String color;
+	public static void main(String[] args) throws IOException {
+		
+		Utiles marcador1 = new Utiles();
+		Utiles marcador2 = new Utiles();
+		Utiles marcador3 = new Utiles();
+		Utiles marcador4 = new Utiles();
+		Utiles marcador5 = new Utiles();
+		marcador1.Asignar_Precio(precio);
+		marcador2.Asignar_Precio(precio);
+		marcador3.Asignar_Precio(precio);
+		marcador4.Asignar_Precio(precio);
+		marcador5.Asignar_Precio(precio);
+		System.out.println("el precio total de los marcadores es :");
+		System.out.println(marcador1.precio + marcador2.precio + marcador3.precio + marcador4.precio + marcador5.precio);
+		marcador1.Asignar_Color(color);
+		marcador2.Asignar_Color(color);
+		marcador3.Asignar_Color(color);
+		marcador4.Asignar_Color(color);
+		marcador5.Asignar_Color(color);
+		System.out.println("hay " + contador + " colores de color negro");
+
+	}
+	
+	public Utiles(int peso, int tamaño, int precio, String textura, String color) throws IOException
+	{
+		
+		
+		
+		this.peso = peso;
+		this.tamaño = tamaño;
+		this.precio = precio;
+		this.textura = textura;
+		this.color = color;
+		Asignar_Precio(precio);
+		
+		
+		
+	}
+
+	
+	public Utiles() {}
+	
+	
+	public void Asignar_Color(String Color) throws IOException
+	{
+		System.out.println("Ingrese el Color");
+		Color = br.readLine();
+		color = Color;
+		if (Color.equals("negro"))
+		{
+			contador ++;
+		}
+	}
+	
+	public String Obtener_Color()
+	{
+		return color;
+	}
+	
+
+	
+	public void Asignar_Precio(int preci) throws IOException
+	{
+		
+
+		System.out.println("ingrese el precio del marcador");
+		preci = Integer.parseInt(br.readLine());
+		precio = preci;
+		
+	}
+	
+	public void Color(String color)
+	{
+		
+	}
+	
+	public int Obtener_Precio()
+	{
+		return precio;
+	}
+	
+
+
+}
